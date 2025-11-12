@@ -7,10 +7,16 @@
 
     //ENTRADA
 
+    let nota = Number(prompt(`Informe uma nota de 0-10:`));
 
     //PROCESSAMENTO
 
+    while (nota < 0 || nota > 10) {
+        nota = Number(prompt(`Informe uma nota válida(entre 0-10):`));
+    }
 
     //SAÍDA
+
+    document.write("Nota válida");
 
 </script>

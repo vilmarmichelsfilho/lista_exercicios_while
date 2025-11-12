@@ -7,10 +7,20 @@
 
     //ENTRADA
 
+    let usuario = prompt(`Insira seu nome de usuário:`);
+    let senha = prompt(`Informe sua senha:`);
 
     //PROCESSAMENTO
 
+    while (usuario == senha) {
+        alert(`O usuário e a senha não podem ser iguais, informe novamente:`);
+        usuario = prompt(`Insira seu nome de usuário:`);
+        senha = prompt(`Informe sua senha:`);
+    }
+
 
     //SAÍDA
+
+    document.write(`Usuário e senha válidos`);
 
 </script>
