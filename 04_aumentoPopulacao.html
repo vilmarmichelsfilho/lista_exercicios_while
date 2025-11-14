@@ -7,10 +7,21 @@
 
     //ENTRADA
 
+    let paisA = 80000;
+    let paisB = 200000;
+
+    let anos = 0;
 
     //PROCESSAMENTO
 
+    while (paisA < paisB) {
+        anos++;
+        paisA = paisA + paisA * 3 / 100;
+        paisB = paisB + paisB * 1.5 / 100;
+    }
 
     //SAÍDA
+
+    document.write(`O pais A demorará ${anos} para alcançar a população do pais B`);
 
 </script>

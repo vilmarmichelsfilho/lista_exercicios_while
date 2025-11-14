@@ -12,10 +12,32 @@
 
     //ENTRADA
 
+    let nome = prompt(`Insira seu nome:`);
+    let idade = Number(prompt(`Insira sua idade:`));
+    let salario = Number(prompt(`Insira seu sálario:`));
+    let sexo = prompt(`Insira seu gênero(F/M):`).toLowerCase();
+    let estadoCivil = prompt(`Insira seu estado cívil: \nS-Solteiro(a) \nC-Casado(a) \nV-Viuvo(a) \nD-Divorciado(a)`).toLowerCase();
 
     //PROCESSAMENTO
 
+    while (nome.length <= 3) {
+        nome = prompt(`Insira um nome válido:`);
+    }
+    while (idade < 0 || idade > 150) {
+        idade = Number(prompt(`Insira uma idade válida:`));
+    }
+    while (salario < 0) {
+        salario = Number(prompt(`Insira um salário válido`));
+    }
+    while (sexo != "f" && sexo != "m") {
+        sexo = prompt(`Insira um gênero válido:`);
+    }
+    while (estadoCivil != "s" && estadoCivil != "c" && estadoCivil != "v" && estadoCivil != "d") {
+        estadoCivil = prompt(`Insira um estado civil válido:\nS-Solteiro(a) \nC-Casado(a) \nV-Viuvo(a) \nD-Divorciado(a)`);
+    }
 
     //SAÍDA
+
+    document.write(`Dados validados com sucesso!`);
 
 </script>

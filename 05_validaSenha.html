@@ -7,10 +7,27 @@
 
     //ENTRADA
 
+    let senha = prompt(`Insira uma senha de quatro digitos inteiros:`); 
 
     //PROCESSAMENTO
 
+    console.log(Number(senha));
+
+    while (senha.length != 4 || senha.includes(".") == true || isNaN(senha)) {
+        senha = prompt(`Insira uma senha de quatro digitos inteiros válida:`);
+    }
+
+    let resposta;
+    const senha2 = Number(prompt(`Insira sua senha novamente:`));
+
+    if (senha2 == senha) {
+        resposta = "Senha correta!";
+    } else {
+        resposta = "Senha incorreta";
+    }
 
     //SAÍDA
+
+    document.write(resposta);
 
 </script>
