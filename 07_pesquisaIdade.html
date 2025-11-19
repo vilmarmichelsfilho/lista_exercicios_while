@@ -14,10 +14,57 @@
 
     //ENTRADA
 
+    let idadePrompt;
+    let salario;
+    let genero;
+
+    let totalDePessoas = 0;
+    let todosSalarios = 0;
+    let idades = [];
+    let mulheres = 0;
+
+    let salarios = [];
+
+    let menorSalario = -1;
+    let idade = 0;
+    let sexo = 0;
 
     //PROCESSAMENTO
 
+    do {
+        idadePrompt = Number(prompt(`Insira sua idade:`));
+        if (idadePrompt >= 0) {
+            salario = Number(prompt(`Insira seu sálario:`));
+        genero = prompt(`Insira seu genêro(M/F):`).toLowerCase();
+
+        idades.push(idadePrompt);
+        salarios.push(salario);
+
+        if (genero == "f") {
+            mulheres++;
+        }
+        totalDePessoas++;
+        todosSalarios += salario;
+
+        if (menorSalario > -1) {
+            if (salario < menorSalario) {
+                menorSalario = salario;
+                idade = idadePrompt;
+                sexo = genero;
+            }
+        } else {
+            menorSalario = salario;
+            idade = idadePrompt;
+            sexo = genero;
+        }
+        }
+    } while (idadePrompt >= 0)
+
+    salarios.sort((a, b) => a - b);
+    idades.sort((a, b) => a - b);
 
     //SAÍDA
+
+    document.write(`A média salarial do grupo é: R$ ${(todosSalarios / totalDePessoas).toFixed(2)} <br> <br> A maior idade do grupo é: ${idades[(idades.length-1)]} <br> A menor idade do grupo é: ${idades[0]} <br> <br> A região tem um total de ${mulheres} mulheres. <br> <br> A pessoa que possui o menor salário tem ${idade} anos e é ${sexo}`);
 
 </script>

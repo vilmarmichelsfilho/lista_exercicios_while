@@ -6,10 +6,24 @@
 
     //ENTRADA
 
+    const numero = Math.floor(Math.random() * 30) + 1;
+    let promptNumero;
+    let tentativas = 0;
 
     //PROCESSAMENTO
 
+    do {
+        promptNumero = Number(prompt(`Insira um número(1-30):`));
+        if (promptNumero > numero) {
+            alert(`O número é mais baixo`);
+        } else if (promptNumero < numero) {
+            alert(`O número é mais alto`);
+        }
+        tentativas++;
+    } while (promptNumero !== numero)
 
     //SAÍDA
     
+    document.write(`Parabens você acertou o número ${numero} em ${tentativas} tentativas`);
+
 </script>

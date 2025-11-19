@@ -6,10 +6,19 @@
     
     //ENTRADA
 
+    let promptSoma;
+
+    let soma = 0;
 
     //PROCESSAMENTO
 
+    do {
+        promptSoma = Number(prompt(`Insira um número:`));
+        soma += promptSoma;
+    } while (promptSoma !== 0)
 
     //SAÍDA
     
+    document.write(`A soma total dos números que você inseriu é de: ${soma}`);
+
 </script>

@@ -21,11 +21,43 @@
 
     //ENTRADA
 
-    
+    let voto;
+
+    let joaozinho = 0;
+    let mariazinha = 0;
+    let nulo = 0;
+    let branco = 0;
 
     //PROCESSAMENTO
 
+    do {
+      voto = Number(prompt(`Insira seu voto: \n1. Candidato Joãozinho \n2. Candidato Mariazinha \n3. Nulo \n4. Branco`));
+      if (voto == 1) {
+        joaozinho++
+      } else if (voto == 2) {
+        mariazinha++
+      } else if (voto == 3) {
+        nulo++ 
+      } else if (voto == 4) {
+        branco++
+      }
+    } while (voto !== 0)
+
+    const soma = joaozinho + mariazinha + nulo + branco;
+    let vencedor;
+
+    if (joaozinho > mariazinha && joaozinho > nulo && joaozinho > branco) {
+        vencedor =  "Candidato Joãozinho";
+    } else if (mariazinha > joaozinho && mariazinha > nulo && mariazinha > branco) {
+        vencedor =  "Candidato Mariazinha";
+    } else if (nulo > joaozinho && nulo > mariazinha && nulo > branco) {
+        vencedor = "Nulo";
+    } else {
+        vencedor = "Branco";
+    }
 
     //SAÍDA
 
+    document.write(`Número de votos: <br> Candidato Joãozinho: ${joaozinho} <br> Candidato Mariazinha: ${mariazinha} <br>
+    Nulo: ${nulo} <br> Branco: ${branco} <br> <br> Porcentagens: <br> Votos Nulos: ${(nulo / soma * 100).toFixed(2)}% <br> Votos em Branco: ${(branco / soma * 100).toFixed(2)}% <br> <br> O candidato vencedor é: ${vencedor}`);
 </script>
